@@ -26,4 +26,19 @@ public class Ships extends Transport{
     public void sound() {
         System.out.println("\nбуль-буль");
     }
+    
+      @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MiniCars)) return false;
+        if (!super.equals(o)) return false;
+        MiniCars miniCars = (MiniCars) o;
+        return weight == miniCars.weight &&
+                year == miniCars.year;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), weight, year);
+    }
 }
