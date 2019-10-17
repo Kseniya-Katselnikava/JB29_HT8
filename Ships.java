@@ -27,18 +27,18 @@ public class Ships extends Transport{
         System.out.println("\nбуль-буль");
     }
     
-      @Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MiniCars)) return false;
+        if (!(o instanceof Ships)) return false;
         if (!super.equals(o)) return false;
-        MiniCars miniCars = (MiniCars) o;
-        return weight == miniCars.weight &&
-                year == miniCars.year;
+        Ships ships = (Ships) o;
+        return speed == ships.speed &&
+                Objects.equals(marka, ships.marka);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), weight, year);
+        return Objects.hash(super.hashCode(), marka, speed);
     }
 }
